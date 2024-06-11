@@ -47,9 +47,7 @@ function countAdjacentMines(blocks = [], x = 10, y = 10) {
   return blocks;
 }
 
-export function revealBlock(oldBlocks = [], x = 10, y = 10) {
-
-  const blocks = structuredClone(oldBlocks);
+export function revealBlock(blocks = [], x = 10, y = 10) {
   if (!blocks[x] || !blocks[x][y]) {
     return;
   }
@@ -62,15 +60,13 @@ export function revealBlock(oldBlocks = [], x = 10, y = 10) {
     for (let j = -1; j <= 1; j++) {
       if (blocks[x + i] && blocks[x + i][y + j]) {
         if (blocks[x + i][y + j].mines) {
-          continue;
+          return;
         } else {
-          blocks[x + i][y + j].revealed = true;
+          revealBlock(blocks, x + i, y + j);
         }
       }
     }
   }
-
-  return blocks;
 }
 
 export function checkLose(blocks = []) {

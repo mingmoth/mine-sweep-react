@@ -31,7 +31,8 @@ export default function useMinesGame() {
 
   function revealBlock(x, y) {
     setBlocks(prevBlocks => {
-      const newBlocks = reveal(prevBlocks, x, y);
+      const newBlocks = structuredClone(prevBlocks);
+      reveal(newBlocks, x, y);
       return newBlocks;
     });
   }
