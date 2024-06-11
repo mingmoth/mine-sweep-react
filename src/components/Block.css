@@ -1,0 +1,42 @@
+.block {
+  width: 20px;
+  height: 20px;
+  border: 1px solid grey;
+  background-color: lightgray;
+  cursor: pointer;
+  line-height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-hidden:hover {
+  background-color: darkgray;
+}
+
+.block-revealed {
+  background-color: #e4e6e8;
+  border: 1px solid lightgray;
+  cursor: not-allowed;
+}
+
+.block-mine {
+  background-color: salmon;
+}
+
+.block-disabled {
+  cursor: not-allowed;
+}
+
+.block-disabled:hover {
+  background-color: lightgray;
+}
+
+.block-revealed:hover {
+  background-color: #e4e6e8;
+}
+
+.block-mine:hover {
+  background-color: salmon;
+}
