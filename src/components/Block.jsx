@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './Block.css';
 
-export default function Block({ block, disabled, onReveal, onFlag }) {
+function isBlockEqual(prevProps, nextProps) {
+  return prevProps.block.revealed === nextProps.block.revealed
+    && prevProps.block.flagged === nextProps.block.flagged;
+}
 
+const Block = memo(function Block({ block, disabled, onReveal, onFlag }) {
   const blockDisplay = () => {
     if (block.flagged) return 'F';
     if (block.revealed) {
@@ -37,4 +41,6 @@ export default function Block({ block, disabled, onReveal, onFlag }) {
       {blockDisplay()}
     </div>
   );
-}
+}, isBlockEqual);
+
+export default Block;
