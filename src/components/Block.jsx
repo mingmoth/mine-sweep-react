@@ -1,7 +1,7 @@
 import React from 'react';
 import './Block.css';
 
-function Block({ block, disabled, onReveal, onFlag }) {
+export default function Block({ block, disabled, onReveal, onFlag }) {
 
   const blockDisplay = () => {
     if (block.flagged) return 'F';
@@ -38,5 +38,3 @@ function Block({ block, disabled, onReveal, onFlag }) {
     </div>
   );
 }
-
-export default React.memo(Block);
