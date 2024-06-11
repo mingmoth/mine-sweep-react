@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import useTimer from './hooks/useTimer';
-import { statuses } from './config/game'
+import useTimer from '../hooks/useTimer';
+import { statuses } from '../config/game'
 
-export default function Gamehint({ gameHint, gameStatus, isStart }) {
+export default function GameHint({ gameHint, gameStatus, isStart }) {
   const {
     count,
     startCount,

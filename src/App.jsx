@@ -1,6 +1,6 @@
 import React from 'react';
 import Block from './components/block';
-import GameHint from './GameHint';
+import GameHint from './components/GameHint';
 import useMinesGame from './hooks/useMinesGame';
 import './App.css';
 
